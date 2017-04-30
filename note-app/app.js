@@ -9,7 +9,7 @@ app.use('/', express.static(__dirname + '/'));
 app.use('/memories', express.static(__dirname + '/'));
 app.use('/monthly', express.static(__dirname + '/'));
 app.use('/write', express.static(__dirname + '/'));
-
+app.use('/login',express.static(__dirname + '/'));
 app.all('/api/add', function (req, res, next) {
   console.log('Add API is called...');
   api = new rest_api();

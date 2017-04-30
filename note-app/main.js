@@ -9,6 +9,7 @@ noteapp.use('/', express.static(__dirname + '/'));
 noteapp.use('/memories', express.static(__dirname + '/'));
 noteapp.use('/monthly', express.static(__dirname + '/'));
 noteapp.use('/write', express.static(__dirname + '/'));
+noteapp.use(express.static(__dirname + '/login'));
 
 noteapp.all('/api/add', function (req, res, next) {
   console.log('Add API is called...');
@@ -24,7 +25,6 @@ noteapp.all('/api/list', function (req, res, next) {
   api = new rest_api();
   api.list(req, res);
 });
-
 noteapp.listen(3000, function () {
   console.log('Example noteapp listening on port 3000!');
 });
